@@ -3,23 +3,26 @@ package OOPbasics;
 public class TestBook {
 
 	public static void main(String[] args) {
-		// author instance for further use
-		Author dummya = new Author("somename", "somename@gmail.com", 'f');
-		System.out.println(dummya);
-		// constructor and toString test
-		Book book1 = new Book("Crazy title", dummya, 99.99, 100);
+		// authors array for further use
+		Author[] authors = new Author[2];
+		authors[0] = new Author("somename", "somename@gmail.com", 'f');
+		authors[1] = new Author("Joh Doe", "JD@serv.com", 'm');
+		// book instances, constructor tests
+		Book book1 = new Book("sometitle", authors, 50, 20);
+		Book book2 = new Book("just some other title", authors, 32.76);
+		// getAuthorNames method test
+		System.out.println(book1.getAuthorNames());
+		System.out.println(book2.getAuthorNames());
+		// getters setters tests
+		book2.setPrice(33.00);
+		book2.setQuantity(90);
+		System.out.println(book1.getQuantity());
+		System.out.println(book1.getPrice());
+		System.out.println(book1.getName());
+		System.out.println(book1.getAuthors()[0]);
+		System.out.println(book1.getAuthors()[1]);
+		// toString test
 		System.out.println(book1);
-		// test setters and getters
-		book1.setPrice(87.70);
-		book1.setQuantity(20);
-		System.out.println("Name: " + book1.getName());
-		System.out.println("Price: " + book1.getPrice());
-		System.out.println("Quantity: " + book1.getQuantity());
-		System.out.println("Author: " + book1.getAuthor());
-		System.out.println("Authors name: " + book1.getAuthor().getName());
-		System.out.println("Authors email: " + book1.getAuthor().getEmail());
-		// anonymous instance of author used in book constructor
-		Book book2 = new Book("Just some other title", new Author("John", "John@example.com", 'f'), 55.30);
 		System.out.println(book2);
 	}
 

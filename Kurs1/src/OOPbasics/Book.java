@@ -2,18 +2,18 @@ package OOPbasics;
 
 public class Book {
 	private String name;
-	private Author author;
+	private Author[] authors;
 	private double price;
 	private int quantity=0;
 	// constructors
-	public Book(String name, Author author, double price) {
+	public Book(String name, Author[] authors, double price) {
 		this.name = name;
-		this.author = author;
+		this.authors = authors;
 		this.price = price;
 	}
-	public Book(String name, Author author, double price, int quantity) {
+	public Book(String name, Author[] authors, double price, int quantity) {
 		this.name = name;
-		this.author = author;
+		this.authors = authors;
 		this.price = price;
 		this.quantity = quantity;
 	}
@@ -21,8 +21,8 @@ public class Book {
 	public String getName() {
 		return name;
 	}
-	public Author getAuthor() {
-		return author;
+	public Author[] getAuthors() {
+		return authors;
 	}
 	public double getPrice() {
 		return price;
@@ -36,8 +36,21 @@ public class Book {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-	// methods: toString "Book[name=?,Author[name=?,email=?,gender=?],price=?,qty=?"
+	// methods: toString "Book[name=?,Authors[name=?,email=?,gender=?]...,price=?,qty=?"
 	public String toString() {
-		return "Book[name=" + name + "," + author + ",price=" + price + ",qty=" + quantity + "]";
+		String authorsNames = new String();
+		for (int index=0 ; index<authors.length ; index++) {
+			authorsNames += authors[index];
+			if (index<authors.length-1) authorsNames += ",";
+		}
+		return "Book[name=" + name + ",authors=" + "{" + authorsNames + "}" + ",price=" + price + ",qty=" + quantity + "]";
+	}
+	public String getAuthorNames() {
+		String authorsNames = new String();
+		for (int index=0 ; index<authors.length ; index++) {
+			authorsNames += authors[index].getName();
+			if (index<authors.length-1) authorsNames += ",";
+		}
+		return "\"" + authorsNames + "\"";
 	}
 }
