@@ -1,4 +1,4 @@
-package OOPbasics;
+package OOPMyPoint;
 
 public class MyPoint {
 	private int x = 0;
@@ -39,7 +39,7 @@ public class MyPoint {
 	}
 	
 	public String toString() {
-		return "\"(" + x + "," + y + ")\"";
+		return "(" + x + "," + y + ")";
 	}
 	
 	public double distance(int x, int y) {

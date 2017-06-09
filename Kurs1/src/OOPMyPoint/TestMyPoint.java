@@ -1,4 +1,4 @@
-package OOPbasics;
+package OOPMyPoint;
 
 public class TestMyPoint {
 
@@ -22,5 +22,4 @@ public class TestMyPoint {
 		System.out.println("Distance between P1 and 3,5: " + p1.distance(3, 5));
 		System.out.println("Distance between P2 and 0,0: " + p2.distance());
 	}
-
 }

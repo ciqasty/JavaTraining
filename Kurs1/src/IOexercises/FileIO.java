@@ -4,9 +4,6 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.io.PrintWriter;
 
-import javax.swing.table.TableStringConverter;
-
-
 public class FileIO {
 
 	public static void main(String[] args) throws FileNotFoundException {

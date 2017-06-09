@@ -1,4 +1,4 @@
-package OOPbasics;
+package OOPMyPoint;
 
 public class MyPointProgram {
 
